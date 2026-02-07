@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . .
 
-WORKDIR /app/OpenClaw/OpenClaw
-RUN mkdir build && cd build && cmake .. && make
+WORKDIR /app/OpenClaw
+RUN mkdir -p build && cd build && cmake .. && make
 
 CMD ["./build/OpenClaw"]
